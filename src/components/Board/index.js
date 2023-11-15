@@ -115,6 +115,11 @@ const handleMouseDown = (e) => {
         canvas.addEventListener('mouseup', handleMouseUp)
 
 
+        canvas.addEventListener('touchstart', handleMouseDown)
+        canvas.addEventListener('touchmove', handleMouseMove)
+        canvas.addEventListener('touchend', handleMouseUp)
+
+
      socket.on('beginPath', handleBeginPath)
      socket.on('drawLine', handleDrawLine)
     
@@ -124,6 +129,10 @@ const handleMouseDown = (e) => {
               canvas.removeEventListener('mousedown', handleMouseDown)
         canvas.removeEventListener('mousemove', handleMouseMove)
         canvas.removeEventListener('mouseup', handleMouseUp)
+
+        canvas.removeEventListener('touchstart', handleMouseDown)
+        canvas.removeEventListener('touchmove', handleMouseMove)
+        canvas.removeEventListener('touchend', handleMouseUp)
          
 
         
